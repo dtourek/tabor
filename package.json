@@ -1,9 +1,10 @@
 {
   "name": "tabor",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Bunch of util functions",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "prepack": "yarn build && yarn test",
     "build": "rm -rf lib && tsc",
     "test": "jest"
   },
