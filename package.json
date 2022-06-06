@@ -1,13 +1,12 @@
 {
   "name": "tabor",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Bunch of util functions",
   "main": "lib/index.js",
   "scripts": {
-    "prepack": "yarn build && yarn test",
     "build": "rm -rf lib && tsc",
     "test": "jest",
-    "preversion": "yarn build && yarn test",
+    "preversion": "git add . && yarn build && yarn test",
     "postversion": "git push --tags && yarn publish . --tag $npm_package_version && git push && echo \"Successfully released version $npm_package_version!\""
   },
   "author": "",
