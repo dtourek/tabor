@@ -1,9 +1,9 @@
-import { Left, Maybe, Right } from './maybe';
+import { fail, IMaybe, success } from './maybe';
 
-export const tryCatch = async <T>(fn: () => any): Promise<Maybe<T>> => {
+export const tryCatch = async <T>(fn: () => any): Promise<IMaybe<T>> => {
   try {
-    return Right(await fn());
+    return success(await fn());
   } catch (error: any) {
-    return Left(error);
+    return fail(error);
   }
 };
