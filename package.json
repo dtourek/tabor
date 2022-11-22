@@ -1,6 +1,6 @@
 {
   "name": "tabor",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Bunch of util functions",
   "main": "lib/index.js",
   "homepage": "https://github.com/dtourek/tabor",
