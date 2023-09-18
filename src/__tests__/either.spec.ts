@@ -1,5 +1,5 @@
 import { either } from '../either';
-import { fail, success } from '../maybe';
+import { failed, success } from '../maybe';
 
 describe('either', () => {
   it('returns left', () => {
@@ -7,7 +7,7 @@ describe('either', () => {
       either(
         (err) => err,
         () => 'should not happens',
-        fail(new Error('left')),
+        failed(new Error('left')),
       ),
     ).toEqual(Error('left'));
   });

@@ -10,7 +10,7 @@ describe('tryCatch', () => {
     });
 
   it('should return Left', async () => {
-    expect(await tryCatch(() => Promise.reject(new Error('Rejected')))).toEqual({ status: 'fail', value: Error('Rejected') });
+    expect(await tryCatch(() => Promise.reject(new Error('Rejected')))).toEqual({ status: 'failed', value: Error('Rejected') });
   });
 
   it('should return right', async () => {
@@ -18,7 +18,7 @@ describe('tryCatch', () => {
   });
 
   it('should return left with async/await', async () => {
-    expect(await tryCatch(async () => promise(false))).toEqual({ status: 'fail', value: Error('Promise rejected!') });
+    expect(await tryCatch(async () => promise(false))).toEqual({ status: 'failed', value: Error('Promise rejected!') });
   });
 
   it('should return right with async/await', async () => {
